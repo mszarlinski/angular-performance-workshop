@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('cardsBrowserModule')
-    .directive('cardTypeLabel', function ($interpolate) {
+    .directive('cardTypeLabel', function () {
 
         var TYPE_TO_LABEL_CLASS = {
             MINION: 'label label-warning',
@@ -12,9 +12,11 @@ angular.module('cardsBrowserModule')
         };
         var DEFAULT_CLASS = 'label label-default';
         return {
+            scope: {
+                cardTypeLabel: '='
+            },
             link: function (scope, elem) {
-                var type = $interpolate(elem.text())(scope);
-                var labelClass = TYPE_TO_LABEL_CLASS[type];
+                var labelClass = TYPE_TO_LABEL_CLASS[scope.cardTypeLabel];
                 if (labelClass) {
                     elem.addClass(labelClass);
                 } else {
