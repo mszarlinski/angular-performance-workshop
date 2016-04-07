@@ -10,7 +10,7 @@
 
             <span>{{:: card.rarity | rarityToNumber }}</span> <!-- filter instead of precalculated field in resource -->
 
-            <span class="pull-right"><strong>{{:: vm.showCost(card.cost) }}</strong></span> <!-- binding to function -->
+            <span class="badge">{{:: card.cost }}</span>
         </li>
     </ul>
 </form>

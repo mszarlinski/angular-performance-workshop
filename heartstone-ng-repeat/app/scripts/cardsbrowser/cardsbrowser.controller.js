@@ -3,14 +3,6 @@
 angular.module('cardsBrowserModule')
     .controller('CardsBrowserCtrl', function (cards) {
         this.cards = cards;
-
-        this.showCost = function (cost) {
-            var result = '';
-            for (var i = 0; i < cost; i++) {
-                result += ' *';
-            }
-            return result;
-        }
     })
     .filter('rarityToNumber', function() {
         var RARITY_TO_NUMBER = {
