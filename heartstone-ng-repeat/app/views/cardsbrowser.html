@@ -1,0 +1,9 @@
+<h3>Heartstone cards browser</h3>
+<input type="text" ng-model="vm.searchString" class="form-control">
+<br>
+<ul class="list-group">
+    <li ng-repeat="card in vm.cards | filter: {name: vm.searchString}" class="list-group-item">
+        <span class="badge">{{  card.cost }}</span>
+        <strong>{{ card.name }}</strong>: {{ card.text }} <span card-type-label>{{ card.type }}</span>
+    </li>
+</ul>
