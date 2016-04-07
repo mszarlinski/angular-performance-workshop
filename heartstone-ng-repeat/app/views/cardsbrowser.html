@@ -1,6 +1,6 @@
 <h3>Heartstone cards browser</h3>
 <form novalidate>
-    <input type="text" ng-model="vm.searchString" class="form-control">
+    <input type="text" ng-model="vm.searchString" ng-model-options="{ debounce: 200 }" class="form-control">
     <br>
     <ul class="list-group">
         <li ng-repeat="card in vm.displayedCards track by ::card.id" class="list-group-item">
