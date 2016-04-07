@@ -8,7 +8,7 @@
             <span>{{:: card.text }}</span>
             <span card-type-label="card.type">{{:: card.type }}</span> <!-- unnecessary 2-way bound directive parameter -->
 
-            <span>{{:: card.rarity | rarityToNumber }}</span> <!-- filter instead of precalculated field in resource -->
+            <span style="font-style: italic">{{:: card.rarity }}</span>
 
             <span class="badge">{{:: card.cost }}</span>
         </li>
