@@ -12,11 +12,11 @@ angular.module('cardsBrowserModule')
         };
         var DEFAULT_CLASS = 'label label-default';
         return {
-            scope: {
-                cardTypeLabel: '='
-            },
-            link: function (scope, elem) {
-                var labelClass = TYPE_TO_LABEL_CLASS[scope.cardTypeLabel];
+            link: function (scope, elem, attrs) {
+                var type = scope.$eval(attrs.cardTypeLabel);
+                elem.text(type);
+
+                var labelClass = TYPE_TO_LABEL_CLASS[type];
                 if (labelClass) {
                     elem.addClass(labelClass);
                 } else {
