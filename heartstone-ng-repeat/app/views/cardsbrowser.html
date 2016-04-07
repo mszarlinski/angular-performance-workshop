@@ -6,7 +6,7 @@
         <li ng-repeat="card in vm.cards | filter: {name: vm.searchString} track by ::card.id" class="list-group-item">
             <strong>{{:: card.name }}</strong>:
             <span>{{:: card.text }}</span>
-            <span card-type-label="card.type">{{:: card.type }}</span> <!-- unnecessary 2-way bound directive parameter -->
+            <span card-type-label="card.type"></span>
 
             <span style="font-style: italic">{{:: card.rarity }}</span>
 
