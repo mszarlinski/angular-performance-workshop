@@ -3,14 +3,14 @@
     <input type="text" ng-model="vm.searchString" class="form-control">
     <br>
     <ul class="list-group">
-        <li ng-repeat="card in vm.cards | filter: {name: vm.searchString} track by card.id" class="list-group-item">
-            <strong>{{card.name }}</strong>: <!-- unnecessary 2-way binding -->
-            <span>{{ card.text }}</span>
-            <span card-type-label="card.type">{{card.type }}</span> <!-- unnecessary 2-way bound directive parameter -->
+        <li ng-repeat="card in vm.cards | filter: {name: vm.searchString} track by ::card.id" class="list-group-item">
+            <strong>{{:: card.name }}</strong>:
+            <span>{{:: card.text }}</span>
+            <span card-type-label="card.type">{{:: card.type }}</span> <!-- unnecessary 2-way bound directive parameter -->
 
-            <span>{{ card.rarity | rarityToNumber }}</span> <!-- filter instead of precalculated field in resource -->
+            <span>{{:: card.rarity | rarityToNumber }}</span> <!-- filter instead of precalculated field in resource -->
 
-            <span class="pull-right"><strong>{{ vm.showCost(card.cost) }}</strong></span> <!-- binding to function -->
+            <span class="pull-right"><strong>{{:: vm.showCost(card.cost) }}</strong></span> <!-- binding to function -->
         </li>
     </ul>
 </form>
