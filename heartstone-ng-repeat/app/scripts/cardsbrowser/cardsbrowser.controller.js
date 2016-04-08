@@ -2,13 +2,7 @@
 
 angular.module('cardsBrowserModule')
     .controller('CardsBrowserCtrl', function (cards) {
-        var vm = this;
-
         this.cards = cards;
-
-        this.getCards = function() {
-            return vm.cards;
-        };
 
         this.showCost = function (cost) {
             var result = '';
