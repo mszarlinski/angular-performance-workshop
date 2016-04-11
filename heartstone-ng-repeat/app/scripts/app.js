@@ -27,4 +27,14 @@ angular
             .otherwise({
                 redirectTo: '/'
             });
+    })
+    .run(function initializeNgStats() {
+        setTimeout(function () {
+            window.self.showAngularStats({
+                position: 'topleft',
+                digestTimeThreshold: 100,
+                logDigest: true,
+                logWatches: true
+            });
+        }, 1000);
     });

@@ -11,6 +11,13 @@
             <span style="font-style: italic">{{:: card.rarity }}</span>
 
             <span class="badge">{{:: card.cost }}</span>
+            
+            <button ng-click="vm.showFlavor(card)" ng-show="card.flavor && !card.flavorDisplayed">Flavor <i class="glyphicon glyphicon-chevron-down"></i></button>
+            <!-- ng-show instead of ng-if -->
+            <button ng-click="vm.hideFlavor(card)" ng-show="card.flavorDisplayed">Flavor <i class="glyphicon glyphicon-chevron-up"></i></button>
+            <div ng-show="card.flavorDisplayed">
+                <textarea class="form-control" ng-model="card.flavor"></textarea>
+            </div>
         </li>
     </ul>
 </form>

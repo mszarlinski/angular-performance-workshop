@@ -14,12 +14,4 @@ angular.module('heartstoneNgRepeatApp')
             'AngularJS',
             'Karma'
         ];
-
-        //ng-stats config
-        window.self.showAngularStats({
-            position: 'topleft',
-            digestTimeThreshold: 100,
-            logDigest: true,
-            logWatches: true
-        });
     });
