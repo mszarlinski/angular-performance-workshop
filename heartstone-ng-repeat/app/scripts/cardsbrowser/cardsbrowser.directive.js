@@ -24,4 +24,28 @@ angular.module('cardsBrowserModule')
                 }
             }
         }
+    })
+    .directive('toggleCardFlavorBtn', function () {
+        return {
+            restrict: 'E',
+            template: '<button ng-click="toggleFlavor()"><span>Flavor <i class="glyphicon glyphicon-chevron-down"></i></span></button>',
+            replace: true,
+            scope: {
+                card: '='
+            },
+            link: function (scope, elem, attrs) {
+                scope.toggleFlavor = function () {
+                    var text;
+                    if (scope.card.flavorDisplayed) {
+                        text = '<span>Flavor <i class="glyphicon glyphicon-chevron-down"></i></span>';
+                        scope.card.flavorDisplayed = false;
+                    } else {
+                        text = '<span>Flavor <i class="glyphicon glyphicon-chevron-up"></i></span>';
+                        scope.card.flavorDisplayed = true;
+                    }
+                    $(elem).empty();
+                    $(elem).prepend(text);
+                };
+            }
+        }
     });

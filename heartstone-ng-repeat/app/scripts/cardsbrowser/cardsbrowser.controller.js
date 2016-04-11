@@ -8,14 +8,6 @@ angular.module('cardsBrowserModule')
         this.displayedCards = angular.copy(cards);
         this.searchString = '';
 
-        this.showFlavor = function(card) {
-            card.flavorDisplayed = true;
-        };
-
-        this.hideFlavor = function(card) {
-            card.flavorDisplayed = false;
-        };
-        
         $scope.$watch('vm.searchString', function (val) {
             if (!val) {
                 vm.displayedCards = angular.copy(cards);
