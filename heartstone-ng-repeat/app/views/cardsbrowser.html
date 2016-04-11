@@ -11,6 +11,12 @@
             <span>{{ card.rarity | rarityToNumber }}</span> <!-- filter instead of precalculated field in resource -->
 
             <span class="pull-right"><strong>{{ vm.showCost(card.cost) }}</strong></span> <!-- binding to function -->
+            <button ng-click="vm.showFlavor(card)" ng-show="card.flavor && !card.flavorDisplayed">Flavor <i class="glyphicon glyphicon-chevron-down"></i></button>
+            <!-- ng-show instead of ng-if -->
+            <button ng-click="vm.hideFlavor(card)" ng-show="card.flavorDisplayed">Flavor <i class="glyphicon glyphicon-chevron-up"></i></button>
+            <div ng-show="card.flavorDisplayed">
+                <textarea class="form-control" ng-model="card.flavor"></textarea>
+            </div>
         </li>
     </ul>
 </form>

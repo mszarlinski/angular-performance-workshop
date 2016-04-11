@@ -16,7 +16,16 @@ angular.module('cardsBrowserModule')
                 result += ' *';
             }
             return result;
-        }
+        };
+
+        this.showFlavor = function(card) {
+            card.flavorDisplayed = true;
+        };
+
+        this.hideFlavor = function(card) {
+            card.flavorDisplayed = false;
+        };
+
     })
     .filter('rarityToNumber', function() {
         var RARITY_TO_NUMBER = {
