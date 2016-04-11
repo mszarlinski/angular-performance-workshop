@@ -14,6 +14,7 @@ angular
         'ngResource',
         'ngRoute',
         'ngSanitize',
+        'angularStats',
         'cardsBrowserModule'
     ])
     .config(function ($routeProvider) {
